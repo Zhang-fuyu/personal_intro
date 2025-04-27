@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PERSONAL INTRODUCTION OF Fuyu Zhang</title>
+    <style>
+        /* 基础重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* 整体样式 */
+        body {
+            font-family: '微软雅黑', sans-serif;
+            line-height: 1.4;
+            background: linear-gradient(135deg, rgba(52, 136, 219, 0.16) 0%, rgba(52, 136, 219, 0.17) 100%);
+            padding: 2rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(52, 136, 219, 0.17);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(52, 136, 219, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        /* 头部布局 */
+        .profile-header {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 2.5rem;
+            align-items: center;
+            margin-bottom: 2.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid rgba(52, 136, 219, 0.1);
+        }
+
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(52, 136, 219, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .avatar:hover {
+            transform: rotate(5deg) scale(1.05);
+        }
+
+        .profile-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 2.2rem;
+            letter-spacing: 0.05em;
+        }
+        .subtitle {
+            color: #666;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+       .subtitle1 {
+            color: rgba(14, 14, 14, 0.57);
+            font-size: 0.8rem;
+            opacity: 0.9;
+        }
+        .subtitle2 {
+            color: rgba(14, 14, 14, 0.87);
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+       .test1 {
+            color: rgb(52, 136, 219);
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+
+        .highlight {
+            font-weight: 600;
+            color: #2c3e50;
+            text-shadow: 0 1px 1px rgba(0,0,0,0.1);
+        }
+
+        /* 内容区块 */
+        .section {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: rgba(249, 250, 251, 0.8);
+            border-radius: 8px;
+            transition: transform 0.2s ease;
+        }
+
+        .section:hover {
+            transform: translateX(10px);
+        }
+
+        h2 {
+            color: rgba(52, 136, 219, 0.95);
+            font-size: 1.4rem;
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid rgba(52, 136, 219, 0.2);
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.8rem;
+            padding-left: 1rem;
+            position: relative;
+            line-height: 1.7;
+        }
+
+        li::before {
+            content: "•";
+            color: rgb(52, 136, 219);
+            position: absolute;
+            left: -0.8rem;
+            font-size: 1.2em;
+        }
+        /* 个人信息和教育背景列表 */
+        .info-list {
+            list-style: none;
+            padding-left: 1.2rem;
+        }
+
+        .info-list li {
+            margin-bottom: 0.8rem;
+            padding-left: 1rem;
+            position: relative;
+            line-height: 1.7;
+            margin-left: 1rem; /* 向后退一个 */
+        }
+
+        .info-list li::before {
+            content: "•";
+            color: rgb(52, 136, 219);
+            position: absolute;
+            left: -0.8rem;
+            font-size: 1.2em;
+        }
+        /* 兴趣爱好标签 */
+        .hobbies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .hobby-tag {
+            background: rgba(52, 136, 219, 0.1);
+            color: rgb(52, 136, 219);
+            padding: 0.5rem 1.2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(52, 136, 219, 0.3);
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .hobby-tag:hover {
+            background: rgb(52, 136, 219);
+            color: white;
+            transform: translateY(-2px);
+        }
+        /* 在原有的CSS中添加以下样式 */
+        .info-item {
+            display: inline-block;
+            margin-right: 2em;  /* 控制间距大小 */
+            position: relative;
+        }
+
+        .info-item:not(:last-child)::after {
+            content: "|";
+            color: #446088;
+            position: absolute;
+            right: -1.2em;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+                margin: 1rem;
+            }
+
+            .profile-header {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                text-align: center;
+            }
+
+            .avatar {
+                margin: 0 auto;
+            }
+
+            .section {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+        /* 在CSS中添加以下样式 */
+        .gpa-chart {
+            margin: 2rem auto;
+            max-width: 500px;
+            text-align: center;
+            padding: 1.0rem;
+            background: rgba(249, 250, 251, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .gpa-image {
+            width: 100%;
+            height: auto;
+            max-width: 500px;
+            border-radius: 8px;
+            border: 1px solid rgba(52, 136, 219, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .gpa-image:hover {
+            transform: scale(1.02);
+        }
+
+        .image-caption {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .gpa-chart {
+                margin: 1.5rem;
+                padding: 1rem;
+            }
+
+            .gpa-image {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 1rem;
+            }
+
+            .avatar {
+                width: 100px;
+                height: 100px;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* 新增模态框样式 */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            overflow: auto;
+        }
+
+        .modal-content {
+            margin: 5% auto;
+            padding: 20px;
+            max-width: 90%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .modal img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+
+        .modal img:hover {
+            transform: scale(1.03);
+        }
+
+        .close {
+            position: absolute;
+            right: 35px;
+            top: 15px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover {
+            color: #3498db;
+        }
+        /* 新增证书样式 */
+        .certificate-tag {
+            background: rgba(52, 136, 219, 0.1);
+            color: rgb(52, 136, 219);
+            padding: 0.5rem 1.2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(52, 136, 219, 0.3);
+            transition: all 0.2s ease;
+            cursor: pointer;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .certificate-tag:hover {
+            background: rgb(52, 136, 219);
+            color: white;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <!-- 头部区域 -->
+    <header class="profile-header">
+        <img src="blue_back_protrait.jpg" alt="张福雨头像" class="avatar">
+        <div class="profile-info">
+            <h1>姓名：张福雨</h1>
+            <p class="info-list">
+                <p>
+                    <span class="info-item"><span class="subtitle">本科在读</span></span>
+                    <span class="info-item"><span class="subtitle">人工智能专业</span></span>
+                    <span class="info-item"><span class="subtitle">安徽师范大学</span></span>
+                    <span class="info-item"><span class="subtitle">邮箱：<span class="highlight"> zfy@ahnu.edu.cn</span></span></span>
+                </p>
+            </p>
+        </div>
+    </header>
+        <!-- 个人介绍 -->
+        <section class="section">
+            <h2>🙋‍♀️ 简要介绍 <span class="test1">Brief introduction</span> </h2>
+            <p class="highlight">您好！我是张福雨，认识您是我的荣幸！</p>
+            <p class="info-list">
+               <span class="subtitle1" style="margin-top: 1.5em;">本人目前是
+                    <span class="highlight">安徽师范大学</span>
+                    <span class="highlight">人工智能专业</span> 的一名
+                    <span class="highlight">大三</span> 学生，<span class="subtitle1">主攻<span class="highlight"> Deep Learning </span>方向，对<span class="highlight"> Computer Vision </span>领域非常感兴趣，具有扎实的Python基础，希望将理论知识应用于实际项目开发。
+                </span>
+               </span>
+                <span class="subtitle1">目前已通过<span class="highlight">CET-6</span>（542分），智育成绩位于专业第一（
+                <span class="highlight">1/65</span>），必修课程GPA如下：
+                <!-- 图片展示区域 -->
+                    <div class="gpa-chart">
+                        <img src="GPA.png"
+                             alt="本科前五学期课程GPA展示"
+                             class="gpa-image"
+                             loading="lazy">
+                        <p class="image-caption">必修课程成绩分布（更新至2025春季学期）</p>
+                    </div>
+                </span>
+            </p>
+        </section>
+
+        <!-- 学历背景 -->
+        <section class="section">
+            <h2>👩‍💻 个人信息 <span class="test1">Personal information</span> </h2>
+            <ul>
+                <li><p class="highlight">👧 基本信息</p></li>
+                <ul class="info-list">
+                    <span class="info-item"><span class="highlight">籍贯：</span><span class="subtitle2">安徽池州</span></span>
+                    <span class="info-item"><span class="highlight">政治面貌：</span><span class="subtitle2">共青团员</span></span>
+                    <span class="info-item"><span class="highlight">出生年月：</span><span class="subtitle2">2004年9月</span></span>
+                </ul>
+                <li><p class="highlight" style="margin-top: 1.7em;">🎓 教育背景</p></li>
+                <ul class="info-list"><span class="highlight">2022-至今： </span><span class="subtitle2">安徽师范大学 —— 人工智能专业</span></ul>
+                <ul class="info-list"><span class="highlight">2019-2022： </span><span class="subtitle2">池州市第一中学</span></ul>
+            </ul>
+        </section>
+
+        <!-- 成果荣誉 -->
+        <section class="section">
+            <h2>🏆 主要成果 <span class="test1">Main achievements</span> </h2>
+            <ul>
+                <li><span class="highlight">2024：  </span><span class="info-item"><span class="subtitle2">蓝桥杯Python大学B组国家级三等奖</span></span>
+                    <span class="info-item"><span class="subtitle2">数学建模竞赛省二等奖(CUMCM)</span></span>
+                    <span class="info-item"><span class="subtitle2">计挑赛华东赛区三等奖(NCCCU)</span></span></li>
+                <li><span class="highlight">2023：  </span><span class="info-item"><span class="subtitle2">全国大学生英语竞赛国家级三等奖(NECCS)</span></span>
+                    <span class="info-item"><span class="subtitle2">全国大学生数学竞赛省三等奖(CMC)</span></span></li>
+                <li><span class="highlight">2022-2024：  </span><span class="subtitle2">校一等奖学金</span></li>
+                <li><span class="highlight">2024：  </span><span class="subtitle2">国家励志奖学金</span></li>
+                <li><span class="certificate-tag">部分竞赛证书</span></li>
+            </ul>
+        </section>
+
+        <!-- 未来规划-->
+        <section class="section">
+            <h2>📖 未来规划 <span class="test1">Future planning</span> </h2>
+            <ul>
+                <li><p class="subtitle1">自本人大三下学期开始，我意识到课堂上的知识固然重要，但是我深知AI是一门实践学科，我更想学习课本外的技能。我很遗憾没能在前三年的学习中取得多大的成果，目前没有任何科研或项目成果。</p></li>
+                <li><p class="subtitle1" style="margin-top: 1.6em;">前五个学期我专心学习课程基础知识，我意识到自己在科研道路上就是一张白纸，我很清楚读研是我目前最坚定的目标。</p></li>
+                <li><p class="subtitle1" style="margin-top: 1.6em;">2025年3月份开始跟着老师，系统学习基于PyTorch框架的DL，教材来自 <span class="highlight"><a href="https://baike.baidu.com/item/%E6%9D%8E%E6%B2%90/59831761">李沐</a></span> 的 <span class="highlight"><a href="https://zh.d2l.ai/">《动手学深度学习》</a></span></p></li>
+                <li><p class="subtitle1">目前我正在研读论文<span class="highlight"><a href="https://arxiv.org/abs/2503.17261">《Cross-Modal Interactive Perception Network with Mamba for Lung Tumor Segmentation in PET-CT Images》</a></span></p></li>
+                <li><p class="subtitle1">我想研究的方向包括但不限于：</p></li>
+            </ul>
+        </section>
+
+        <!-- 兴趣爱好 -->
+        <section class="section">
+            <h2>😀 个人兴趣爱好 <span class="test1">interests and hobbies</span> </h2>
+            <div class="hobbies">
+                <p class="test1">【点击展示部分个人作品】</p>
+                <span class="hobby-tag">绘画</span>
+                <span class="hobby-tag">3D建模</span>
+                <span class="hobby-tag">聆听音乐</span>
+                <span class="hobby-tag">羽毛球运动</span>
+            </div>
+        </section>
+
+         <!-- 校园经历 -->
+        <section class="section">
+            <h2>📚 校园主要经历 <span class="test1">Campus experience</span> </h2>
+            <ul>
+                <li><span class="highlight">大一：</span>
+                    <span class="info-item"><span class="subtitle2">班级体育委员</span></span>
+                    <span class="info-item"><span class="subtitle2">学生会体育部部员</span></span>
+                </li>
+                <li><span class="highlight">大二： </span>
+                    <span class="info-item"><span class="subtitle2">学生会体育部副部长</span></span>
+                    <span class="info-item"><span class="subtitle2">校资助宣传大使</span></span>
+                    <span class="info-item"><span class="subtitle2">学代会班级代表</span></span>
+                    <span class="info-item"><span class="subtitle2">校运会表演人员</span></span>
+                </li>
+                <li><span class="highlight">大三： </span>
+                    <span class="info-item"><span class="subtitle2">团支书</span></span>
+                    <span class="info-item"><span class="subtitle2">低年级导生</span></span>
+                    <span class="info-item"><span class="subtitle2">院“自强之星”</span></span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- ending -->
+        <div >
+            <span class="subtitle1">本人承诺上述所有信息属实</span>
+        </div>
+
+    </div>
+
+    <!-- 模态框 -->
+    <div id="gallery-modal" class="modal">
+        <span class="close">&times;</span>
+        <div class="modal-content"></div>
+    </div>
+
+    <script>
+        // 图片数据配置
+        const galleryData = {
+            '绘画': [
+                'images/b1.jpg', // 确保路径正确
+                'images/b2.jpg'
+            ],
+            '3D建模': [
+                'images/a.jpg',
+                'images/a1.jpg',
+                'images/a2.jpg',
+                'images/a3.jpg'
+            ],
+            '证书': [
+                'images/lqb.jpg',
+                'images/jts.jpg',
+                'images/sxjm.jpg',
+                'images/gjlzjxj.jpg',
+                'images/CET6.png'
+            ]
+        };
+
+        // 获取元素
+        const modal = document.getElementById('gallery-modal');
+        const closeBtn = document.querySelector('.close');
+        const modalContent = document.querySelector('.modal-content');
+
+        // 为每个兴趣标签绑定点击事件
+        document.querySelectorAll('.hobby-tag').forEach(tag => {
+            tag.addEventListener('click', () => {
+                const hobby = tag.textContent;
+                showGallery(hobby);
+            });
+        });
+        // 为证书标签绑定点击事件
+        document.querySelector('.certificate-tag').addEventListener('click', () => {
+            showGallery('证书');
+        });
+        // 显示画廊函数
+        function showGallery(hobby) {
+            modalContent.innerHTML = '';
+            if (galleryData[hobby]) {
+                galleryData[hobby].forEach(img => {
+                    const imgElement = document.createElement('img');
+                    imgElement.src = img;
+                    imgElement.alt = `${hobby}作品`;
+                    modalContent.appendChild(imgElement);
+                });
+            }
+            modal.style.display = 'block';
+        }
+
+        // 关闭模态框
+        closeBtn.onclick = () => modal.style.display = 'none';
+        window.onclick = (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        };
+    </script>
+
+    <script>
+        document.querySelector('.gpa-image').addEventListener('click', function() {
+            window.open(this.src, '_blank');
+        });
+    </script>
+</body>
+</html>
