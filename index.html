@@ -225,7 +225,10 @@
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
         }
-
+        /* 原有.gpa-chart样式已自动生效 */
+        .gpa-chart + .gpa-chart {
+            margin-top: 1.5rem;  /* 图片间距 */
+        }
         .gpa-image {
             width: 100%;
             height: auto;
@@ -356,29 +359,43 @@
         </div>
     </header>
         <!-- 个人介绍 -->
-        <section class="section">
-            <h2>🙋‍♀️ 简要介绍 <span class="test1">Brief introduction</span> </h2>
-            <p class="highlight">您好！我是张福雨，认识您是我的荣幸！</p>
-            <p class="info-list">
-               <span class="subtitle1" style="margin-top: 1.5em;">本人目前是
-                    <span class="highlight">安徽师范大学</span>
-                    <span class="highlight">人工智能专业</span> 的一名
-                    <span class="highlight">大三</span> 学生，<span class="subtitle1">主攻<span class="highlight"> Deep Learning </span>方向，对<span class="highlight"> Computer Vision </span>领域非常感兴趣，具有扎实的Python基础，希望将理论知识应用于实际项目开发。
+    <section class="section">
+        <h2>🙋‍♀️ 简要介绍 <span class="test1">Brief introduction</span></h2>
+        <p class="highlight">您好！我是张福雨，认识您是我的荣幸！</p>
+        <p class="info-list">
+            <span class="subtitle1" style="margin-top: 1.5em;">
+                本人目前是
+                <span class="highlight">安徽师范大学</span>
+                <span class="highlight">人工智能专业</span> 的一名
+                <span class="highlight">大三</span> 学生，
+                <span class="subtitle1">
+                    主攻<span class="highlight"> Deep Learning </span>方向，对<span class="highlight"> Computer Vision </span>领域非常感兴趣，具有扎实的Python基础，希望将理论知识应用于实际项目开发。
                 </span>
-               </span>
-                <span class="subtitle1">目前已通过<span class="highlight">CET-6</span>（542分），智育成绩位于专业第一（
+            </span>
+            <span class="subtitle1">
+                目前已通过<span class="highlight">CET-6</span>（542分），智育成绩位于专业第一（
                 <span class="highlight">1/65</span>），必修课程GPA如下：
-                <!-- 图片展示区域 -->
-                    <div class="gpa-chart">
-                        <img src="images/GPA.png"
-                             alt="本科前五学期课程GPA展示"
-                             class="gpa-image"
-                             loading="lazy">
-                        <p class="image-caption">必修课程成绩分布（更新至2025春季学期）</p>
-                    </div>
-                </span>
-            </p>
-        </section>
+            </span>
+        </p>
+
+        <!-- 第一张GPA图片 -->
+        <div class="gpa-chart">
+            <img src="images/GPA.png"
+                 alt="专业必修课程GPA分布"
+                 class="gpa-image"
+                 loading="lazy">
+            <p class="image-caption">专业必修课程成绩分布（更新至2025春季学期）</p>
+        </div>
+
+        <!-- 新增的第二张成绩单图片 -->
+        <div class="gpa-chart">
+            <img src="images/scores.jpg"
+                 alt="本科全程课程绩点统计"
+                 class="gpa-image"
+                 loading="lazy">
+            <p class="image-caption">本科前五学期所有课程绩点情况（更新至2025春季学期）</p>
+        </div>
+    </section>
 
         <!-- 学历背景 -->
         <section class="section">
@@ -407,7 +424,7 @@
                     <span class="info-item"><span class="subtitle2">全国大学生数学竞赛省三等奖(CMC)</span></span></li>
                 <li><span class="highlight">2022-2024：  </span><span class="subtitle2">校一等奖学金</span></li>
                 <li><span class="highlight">2024：  </span><span class="subtitle2">国家励志奖学金</span></li>
-                <li><span class="certificate-tag">部分竞赛证书</span></li>
+                <li><span class="certificate-tag">部分证书展示 <span class="test1">【click here】</span></span></li>
             </ul>
         </section>
 
@@ -418,7 +435,7 @@
                 <li><p class="subtitle1">自本人大三下学期开始，我意识到课堂上的知识固然重要，但是我深知AI是一门实践学科，我更想学习课本外的技能。我很遗憾没能在前三年的学习中取得多大的成果，目前没有任何科研或项目成果。</p></li>
                 <li><p class="subtitle1" style="margin-top: 1.6em;">前五个学期我专心学习课程基础知识，我意识到自己在科研道路上就是一张白纸，我很清楚读研是我目前最坚定的目标。</p></li>
                 <li><p class="subtitle1" style="margin-top: 1.6em;">2025年3月份开始跟着老师，系统学习基于PyTorch框架的DL，教材来自 <span class="highlight"><a href="https://baike.baidu.com/item/%E6%9D%8E%E6%B2%90/59831761">李沐</a></span> 的 <span class="highlight"><a href="https://zh.d2l.ai/">《动手学深度学习》</a></span></p></li>
-                <li><p class="subtitle1">目前我正在研读论文<span class="highlight"><a href="https://arxiv.org/abs/2503.17261">《Cross-Modal Interactive Perception Network with Mamba for Lung Tumor Segmentation in PET-CT Images》</a></span></p></li>
+                <!-- li><p class="subtitle1">目前我正在研读论文<span class="highlight"><a href="https://arxiv.org/abs/2503.17261">《Cross-Modal Interactive Perception Network with Mamba for Lung Tumor Segmentation in PET-CT Images》</a></span></p></li -->
                 <li><p class="subtitle1">我想研究的方向包括但不限于：</p></li>
             </ul>
         </section>
@@ -458,8 +475,15 @@
         </section>
 
         <!-- ending -->
-        <div >
-            <span class="subtitle1">本人承诺上述所有信息属实</span>
+        <section class="section">
+            <h2>📏 人生格言 <span class="test1">居敬持志，成己成物</span> </h2>
+                <div >
+                    <!--span class="subtitle1">我非常愿意为我的错误买单，但我不后悔我的任何决定，选错了就是选错了，我不会为难当时的自己</span -->
+                </div>
+        </section>
+
+        <div>
+            <span class="subtitle1" style="margin-top: 1.6em;">本人承诺上述所有信息属实</span>
         </div>
 
     </div>
